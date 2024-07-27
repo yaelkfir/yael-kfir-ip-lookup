@@ -1,0 +1,30 @@
+<div  class="inline-with-form-field mr-1">
+  <span class="badge medium grey">{{number}}</span>
+</div>
+
+<mat-form-field [appearance]="'outline'" class="mr-1">
+  <input
+    matInput
+    type="text"
+    placeholder="1.208.173.0"
+    [formControl]="ipFormControl"
+  />
+  @if (ipFormControl.hasError('message')) {
+  <mat-error>{{ ipFormControl.getError("message") }} </mat-error>
+  }
+</mat-form-field>
+
+@if(ipRequest$ | async; as ipData) {
+<div class="inline-with-form-field">
+  @if(ipData.response) {
+      <img [src]="ipData.response.countryCode || '' | flagSrc: '32x24'" [alt]="ipData.response.country || 'countery Name'" class="mr-2" />
+      <p class="m-0">{{ ipData.response.timezone || '' | timezoneClock | async }}</p>
+  } @if(ipData.loading) {
+  <mat-progress-spinner
+    color="primary"
+    mode="indeterminate"
+    [diameter]="22"
+  ></mat-progress-spinner>
+  }
+</div>
+}

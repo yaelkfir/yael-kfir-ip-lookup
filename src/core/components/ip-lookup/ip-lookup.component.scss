@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.section-pedding {
+  padding: 12px 24px;
+}
+
+.header {
+  flex-shrink: 0;
+}
+
+.content {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.ip-list {
+  overflow: auto;
+  padding-bottom: 0 !important;
+}
+
+// overides
+mat-list-item,
+mat-list {
+  padding: 0;
+}
+
+// overide mat-list item height
+.item {
+  height: unset !important;
+}

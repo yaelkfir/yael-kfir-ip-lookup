@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$blue-palette, 500);
+$accent: mat.define-palette(mat.$cyan-palette, A200, A100, A400);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+// spacing
+.m-0 {
+  margin: 0 !important;
+}
+.mr-1 {
+  margin-right: 8px;
+}
+.mr-2 {
+  margin-right: 12px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+.mt-2 {
+  margin-top: 16px !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+// add space to inline with form field error message placeholder space
+.inline-with-form-field {
+  padding-bottom: 22px;
+}
+
+// badges
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &.medium {
+    height: 40px;
+    width: 40px;
+  }
+
+  &.grey {
+    background-color: #ededed;
+  }
+}
+
+// overides
+mat-form-field {
+  --mat-form-field-container-height: 40px;
+  --mat-form-field-container-vertical-padding: 8px;
+}
