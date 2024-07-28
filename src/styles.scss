@@ -31,6 +31,7 @@ body {
 }
 
 // spacing
+
 .m-0 {
   margin: 0 !important;
 }
@@ -49,7 +50,28 @@ body {
 .pb-0 {
   padding-bottom: 0 !important;
 }
+.section-devider-margin {
+  margin-left: 14px !important;
+  margin-right: 14px !important;
+}
+.section-pedding {
+  padding: 12px 24px;
+}
+// layout
+.header-content-parent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 
+  .header {
+    flex-shrink: 0;
+  }
+  .content {
+    flex-grow: 2;
+    overflow: hidden;
+  }
+}
 // add space to inline with form field error message placeholder space
 .inline-with-form-field {
   padding-bottom: 22px;

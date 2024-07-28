@@ -1,11 +1,5 @@
-<header class="header title section-pedding">
-  <h3>IP Lookup</h3>
-  <mat-icon aria-hidden="false" fontIcon="close"></mat-icon>
-</header>
-<mat-divider/>
-
-<section class="content section-pedding pb-0">
-  <section class="header">
+<div class="content header-content-parent">
+  <section class="header section-pedding">
     <p>Enter One or More IP Addresses and get their country</p>
     <button
       [disabled]="ips.invalid"
@@ -19,8 +13,8 @@
       <span>Add</span>
     </button>
   </section>
-  <mat-divider/>
-  <section class="ip-list">
+  <mat-divider class="section-devider-margin" />
+  <section class="ip-list section-pedding pb-0">
     <mat-list role="list" class="mt-2">
       @for (ipFormControl of ips.controls; track $index) {
       <mat-list-item class="item">
@@ -32,4 +26,4 @@
       }
     </mat-list>
   </section>
-</section>
+</div>
